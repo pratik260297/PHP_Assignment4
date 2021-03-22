@@ -15,14 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = $_POST['message'];
 
         if ($statement->execute()) {
-            echo " Successful";
+            echo "Successful";
         } else {
             echo "Failure";
         }
         $statement->close();
-        unset($statement);
-
-        $connect->close();
-        unset($connect);
+        $mysqli->close();
     }
 }
